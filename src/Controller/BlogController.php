@@ -8,8 +8,13 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class BlogController extends AbstractController
 {
+    #[Route('/blog', name: 'blog')]
+    public function blog(): Response
+    {
+        return $this->render('blog.html.twig');
+    }
     #[Route('/single_post', name: 'single_post')]
-    public function single_post(): Response
+    public function singlePost(): Response
     {
         return $this->render('single_post.html.twig');
     }
